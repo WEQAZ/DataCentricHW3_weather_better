@@ -72,7 +72,7 @@ class MyAppState extends ChangeNotifier {
 
   var favorites = <City>[];
   var selectedCityId  = 0;
-  final baseUrl = 'http://128.199.241.152:8888/api/cities/';
+  final baseUrl = 'http://localhost:5282/api/cities/';
 
   void toggleFavoriteCity(City city)
   {
@@ -267,8 +267,8 @@ class FavoritesPage extends StatelessWidget {
             leading: IconButton(
               icon: Icon(Icons.favorite),
               onPressed: () {
-                // YOUR WORK HERE!!!!
-              }
+                appState.toggleFavoriteCity(city);
+              },
             ),
             title: Text(city.name),
             trailing: IconButton(
